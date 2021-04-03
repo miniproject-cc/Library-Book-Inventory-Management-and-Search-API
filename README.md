@@ -1,1 +1,1 @@
-# Library Book Management and Search API
+# Library Book Inventory Management and Search API
