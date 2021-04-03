@@ -5,4 +5,4 @@ After building, the docker image was then pushed to https://hub.docker.com/repos
 
 Kubernetes:
 
-The YAML file is used to create a deployment and service for the miniproject app. 
+The YAML file is used to create a deployment and service for the miniproject app. This is done by pulling the relevant image from docker hub.
