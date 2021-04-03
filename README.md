@@ -17,7 +17,7 @@ The project uses Flask which is a python's micro framework. A number of other li
  
 ### Functionality of the API
 
-[CRUD Operations:]
+####[CRUD Operations:]
 
 The API itself uses a book resource to perform CRUD operations. A Book Model helps making changes and storing books to the database. SQLAlchemy is used to connect to MySQL database deployed on AWS or SQLite Database (in older version) locally. Marshal_with is used from Flask_restful to serialise results returned by the API.
 
