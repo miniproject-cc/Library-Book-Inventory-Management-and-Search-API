@@ -3,7 +3,7 @@
 ## Library Book Inventory Management And Search API
 
 This project is intented to help librarians save their time as well as their resources by using this 
-Book Inventory Management App. The restful API that this app provides can be used to store a range a titles that are available in the library as well manage them on day to day basis. The API also provides features using external services including helping librarians to discover millions of new titls on Google Books and research new fields and their reviews on Twitter API.
+Book Inventory Management App. The RESTful API that this app provides can be used to store a range a titles that are available in the library as well manage them on day to day basis. The API also provides features using external services including helping librarians to discover millions of new titles on Google Books and research new fields and their reviews on Twitter API.
 
 A MySQL database that can be hosted using AWS dedicated Database servers and can include a range of book attributes including price and region details.
 
@@ -43,27 +43,19 @@ Accessible on: /twitter/<string:tt> where tt is the string to search.
 
 ### Deployment
 
-The app was deployed using MicroK8s. It is available on the cloud any user intrested can easily have an 
-access to it. YAML was introduced as it basically create a service and deployment of the app
-simultaneously which inturns boosts the effeciency of the app. 
+Deploying the app in Kubernetes was done in two stages: creating a Docker image of the app, and running the image in Kubernetes.
 
 **Docker Image**:
 
-Image creation was done using the Dockerfile, miniproject_docker.py, and requirements.txt. After building, the docker image was then pushed to https://hub.docker.com/repository/docker/gozreh33/miniproject with the tag v1.
+The Docker image was built using the Dockerfile, miniproject_v1.py, and requirements.txt. After building, the Docker image was then pushed to Docker Hub at https://hub.docker.com/repository/docker/gozreh33/miniproject with the tag v1. This image is freely accessible and can be pulled by the public.
 
 **Kubernetes**:
 
-The YAML file is used to create a deployment and service for the miniproject app. This is done by pulling the relevant image from docker hub
+For this project, we decided to use the lightweight, single node MicroK8s Kubernetes. Once Kubernetes has been started, the YAML file (miniproject_v1.yml) can be applied to create both the service and deployment for the miniproject app. The deployment is created by pulling the relevant Docker image (as above).
 
+**Loadbalancing**
 
-### Loadbalancing With
-
-Kubernetes,<br/>
-apiVersion: v1,<br/>
-type: LoadBalancer,<br/>
-protocol: TCP,<br/>
-port: 80,<br/>
-targetPort: 80,<br/>
+By setting the number of pods we want in the deployment to 2+ (change replicas in YAML file), we can get our Kubernetes to load balance. This means the requests sent to the miniproject service will be distributed between the pods running the app, meaning resources are used more efficiently and requests can be completed faster. This is especially true when the system is under high demand. We set the service to be of type load balancer in the YAML file.
 
 
 ### Libraries and External Frameworks Used
@@ -104,14 +96,15 @@ Werkzeug==1.0.1<br/>
 
 FLASK API TUTORIAL: https://www.youtube.com/watch?v=GMppyAPbLYk&t=3555s<br/>
 Hoffmann Sample Google Books API: https://github.com/hoffmann/googlebooks<br/>
+Kubernetes tutorial by TechWorld with Nana: https://www.youtube.com/watch?v=X48VuDVv0do
 
 ### Contributors
 
 
-**Alexander Herzog** - Implementation of Kubernetes, Hosting the Database to AWS<br/>
+**Alexander Herzog** - Implementation of Kubernetes and Docker, hosting the database in AWS RDS<br/>
 
 **Harry Agyemang** - Heroku testing (Idea dropped later on)<br/>
 
-**Ifrah Lateef** - Involved in Kubernetes research and Documentation of the API<br/>
+**Ifrah Lateef** - Involved in Kubernetes research and documentation of the API<br/>
 
-**Najam us Samad Anjum** - Implementation of CRUD Operations, Basic Database Implementation in SQLite, Implementation of External APIs using exisiting resources and LABS from ECS781P Module
+**Najam us Samad Anjum** - Implementation of CRUD operations, basic database implementation in SQLite, implementation of external APIs using exisiting resources and LABS from ECS781P Module
