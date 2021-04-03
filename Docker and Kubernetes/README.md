@@ -1,7 +1,7 @@
 Docker Image:
 
 Image creation was done using the Dockerfile, miniproject_docker.py, and requirements.txt.
-After building, the docker image was then pushed to https://hub.docker.com/repository/docker/gozreh33/miniproject with the tag database.
+After building, the docker image was then pushed to https://hub.docker.com/repository/docker/gozreh33/miniproject with the tag v1.
 
 Kubernetes:
 
