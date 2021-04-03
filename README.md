@@ -17,27 +17,27 @@ The project uses Flask which is a python's micro framework. A number of other li
  
 ### Functionality of the API
 
-####[CRUD Operations:]
+**CRUD Operations**
 
 The API itself uses a book resource to perform CRUD operations. A Book Model helps making changes and storing books to the database. SQLAlchemy is used to connect to MySQL database deployed on AWS or SQLite Database (in older version) locally. Marshal_with is used from Flask_restful to serialise results returned by the API.
 
 The path used to add resource and perform CRUD operations is: /book/<int:book_ISBN13> where ISBN_13 is the 13 digit unique book identifier.
 
-GET: To retrieve book from database, the request can be made from Python requests library by supplying the ISBN_13 number, returns the book if successful or 404 if the book does not exist.
+*GET:* To retrieve book from database, the request can be made from Python requests library by supplying the ISBN_13 number, returns the book if successful or 404 if the book does not exist.
 
-PUT: To add a book to the database, the request can be made from Python requests library, the request should supply the book to be added in the specified format, certain fields are compulsory such as Language, Title and Author, if these are not present a help message would be provided indicating the specified field is missing, this is implemented using the arguments parser in the API. If the request is successful, the book added is returned with 201 response code, if the book already exists then 409 is return.
+*PUT:* To add a book to the database, the request can be made from Python requests library, the request should supply the book to be added in the specified format, certain fields are compulsory such as Language, Title and Author, if these are not present a help message would be provided indicating the specified field is missing, this is implemented using the arguments parser in the API. If the request is successful, the book added is returned with 201 response code, if the book already exists then 409 is return.
 
-PATCH: To update a book in the database, the request can be made from Python requests library, the request should supply the book ISBN_13 to be updated alongside the data to be patched in the specified format, certain fields are compulsory such as Language, Title and Author, if these are not present a help message would be provided indicating the specified field is missing, this is implemented using the arguments parser in the API. If the book is not present 404 is returned, if successful, the updated version of book is returned with 200 response code.
+*PATCH:* To update a book in the database, the request can be made from Python requests library, the request should supply the book ISBN_13 to be updated alongside the data to be patched in the specified format, certain fields are compulsory such as Language, Title and Author, if these are not present a help message would be provided indicating the specified field is missing, this is implemented using the arguments parser in the API. If the book is not present 404 is returned, if successful, the updated version of book is returned with 200 response code.
 
-DELETE: To delete a book in the database, the request can be made from Python requests library, the request should supply the book ISBN_13 to be deleted, if the book is successfully deleted, 204 is returned, if the book is not present 404 is returned.
+*DELETE:* To delete a book in the database, the request can be made from Python requests library, the request should supply the book ISBN_13 to be deleted, if the book is successfully deleted, 204 is returned, if the book is not present 404 is returned.
 
 The API also uses external services mentioned below to assist the users:
 
-Google Books API: Enables the users to search millions of book records alongside very indepth details including pricing which enables librarians to identify potential new volumes of interest and order them directly using the links returned, by default 40 results are returned but this can be updated with in the code. Requests_cache is used for better performance.
+**Google Books API**: Enables the users to search millions of book records alongside very indepth details including pricing which enables librarians to identify potential new volumes of interest and order them directly using the links returned, by default 40 results are returned but this can be updated with in the code. Requests_cache is used for better performance.
 
 Accessible on: /googlebooks/<string:qq> where qq is the query
 
-Twitter API: Enables the users to search millions of reviews of people on selected search terms and fields to identify the new trending terms which would benefit library to discover trend and what topics their audience is interested in. By default returns 100 tweeets, retweets are filtered automatically.
+**Twitter API**: Enables the users to search millions of reviews of people on selected search terms and fields to identify the new trending terms which would benefit library to discover trend and what topics their audience is interested in. By default returns 100 tweeets, retweets are filtered automatically.
 
 Accessible on: /twitter/<string:tt> where tt is the string to search.
 
@@ -58,60 +58,60 @@ The YAML file is used to create a deployment and service for the miniproject app
 
 ### Loadbalancing With
 
-Kubernetes,
-apiVersion: v1,
-type: LoadBalancer,
-protocol: TCP,
-port: 80,
-targetPort: 80,
+Kubernetes,<br/>
+apiVersion: v1,<br/>
+type: LoadBalancer,<br/>
+protocol: TCP,<br/>
+port: 80,<br/>
+targetPort: 80,<br/>
 
 
 ### Libraries and External Frameworks Used
 
 
 [Load Balancing:]
-Kubernetes
-Microk8s
-YAML
+Kubernetes<br/>
+Microk8s<br/>
+YAML<br/>
 
 [Other Libraries and their versions installed in the Python Virtual Environment: ]
-aniso8601==9.0.1
-certifi==2020.12.5
-chardet==4.0.0
-click==7.1.2
-Flask==1.1.2
-Flask-RESTful==0.3.8
-Flask-SQLAlchemy==2.5.1
-greenlet
-idna==2.10
-itsdangerous==1.1.0
-Jinja2==2.11.3
-jsonify==0.5
-MarkupSafe==1.1.1
-oauthlib==3.1.0
-PySocks==1.7.1
-pytz==2021.1
-requests==2.25.1
-requests-cache==0.5.2
-requests-oauthlib==1.3.0
-six==1.15.0
-SQLAlchemy==1.4.3
-tweepy==3.10.0
-urllib3==1.26.4
-Werkzeug==1.0.1
+aniso8601==9.0.1<br/>
+certifi==2020.12.5<br/>
+chardet==4.0.0<br/>
+click==7.1.2<br/>
+Flask==1.1.2<br/>
+Flask-RESTful==0.3.8<br/>
+Flask-SQLAlchemy==2.5.1<br/>
+greenlet<br/>
+idna==2.10<br/>
+itsdangerous==1.1.0<br/>
+Jinja2==2.11.3<br/>
+jsonify==0.5<br/>
+MarkupSafe==1.1.1<br/>
+oauthlib==3.1.0<br/>
+PySocks==1.7.1<br/>
+pytz==2021.1<br/>
+requests==2.25.1<br/>
+requests-cache==0.5.2<br/>
+requests-oauthlib==1.3.0<br/>
+six==1.15.0<br/>
+SQLAlchemy==1.4.3<br/>
+tweepy==3.10.0<br/>
+urllib3==1.26.4<br/>
+Werkzeug==1.0.1<br/>
 
 [Online resources used: ]
 
-FLASK API TUTORIAL: https://www.youtube.com/watch?v=GMppyAPbLYk&t=3555s
-Hoffmann Sample Google Books API: https://github.com/hoffmann/googlebooks
+FLASK API TUTORIAL: https://www.youtube.com/watch?v=GMppyAPbLYk&t=3555s<br/>
+Hoffmann Sample Google Books API: https://github.com/hoffmann/googlebooks<br/>
 
 ### Contributors
 
 
-Alexander Herzog - Implementation of Kubernetes, Hosting the Database to AWS
+Alexander Herzog - Implementation of Kubernetes, Hosting the Database to AWS<br/>
 
-Harry Agyemang - Heroku testing (Idea dropped later on)
+Harry Agyemang - Heroku testing (Idea dropped later on)<br/>
 
-Ifrah Lateef - Involved in Kubernetes research and Documentation of the API
+Ifrah Lateef - Involved in Kubernetes research and Documentation of the API<br/>
 
 Najam us Samad Anjum - Implementation of CRUD Operations, Basic Database Implementation in SQLite, Implementation of External APIs using exisiting resources and LABS from ECS781P Module
