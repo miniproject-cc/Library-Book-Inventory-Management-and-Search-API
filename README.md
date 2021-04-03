@@ -47,11 +47,11 @@ The app was deployed using MicroK8s. It is available on the cloud any user intre
 access to it. YAML was introduced as it basically create a service and deployment of the app
 simultaneously which inturns boosts the effeciency of the app. 
 
-Docker Image:
+**Docker Image**:
 
 Image creation was done using the Dockerfile, miniproject_docker.py, and requirements.txt. After building, the docker image was then pushed to https://hub.docker.com/repository/docker/gozreh33/miniproject with the tag v1.
 
-Kubernetes:
+**Kubernetes**:
 
 The YAML file is used to create a deployment and service for the miniproject app. This is done by pulling the relevant image from docker hub
 
@@ -108,10 +108,10 @@ Hoffmann Sample Google Books API: https://github.com/hoffmann/googlebooks<br/>
 ### Contributors
 
 
-Alexander Herzog - Implementation of Kubernetes, Hosting the Database to AWS<br/>
+**Alexander Herzog** - Implementation of Kubernetes, Hosting the Database to AWS<br/>
 
-Harry Agyemang - Heroku testing (Idea dropped later on)<br/>
+**Harry Agyemang** - Heroku testing (Idea dropped later on)<br/>
 
-Ifrah Lateef - Involved in Kubernetes research and Documentation of the API<br/>
+**Ifrah Lateef** - Involved in Kubernetes research and Documentation of the API<br/>
 
-Najam us Samad Anjum - Implementation of CRUD Operations, Basic Database Implementation in SQLite, Implementation of External APIs using exisiting resources and LABS from ECS781P Module
+**Najam us Samad Anjum** - Implementation of CRUD Operations, Basic Database Implementation in SQLite, Implementation of External APIs using exisiting resources and LABS from ECS781P Module
