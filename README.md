@@ -100,7 +100,7 @@ tweepy==3.10.0<br/>
 urllib3==1.26.4<br/>
 Werkzeug==1.0.1<br/>
 
-[Online resources used: ]
+**Online resources used**:
 
 FLASK API TUTORIAL: https://www.youtube.com/watch?v=GMppyAPbLYk&t=3555s<br/>
 Hoffmann Sample Google Books API: https://github.com/hoffmann/googlebooks<br/>
