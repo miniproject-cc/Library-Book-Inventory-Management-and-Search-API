@@ -69,12 +69,12 @@ targetPort: 80,<br/>
 ### Libraries and External Frameworks Used
 
 
-[Load Balancing:]
+[Load Balancing:]<br/>
 Kubernetes<br/>
 Microk8s<br/>
 YAML<br/>
 
-[Other Libraries and their versions installed in the Python Virtual Environment: ]
+[Other Libraries and their versions installed in the Python Virtual Environment: ]<br/>
 aniso8601==9.0.1<br/>
 certifi==2020.12.5<br/>
 chardet==4.0.0<br/>
