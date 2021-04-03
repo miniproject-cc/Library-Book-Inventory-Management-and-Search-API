@@ -1,0 +1,39 @@
+# first section creates deployment for our app. 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miniproject-deployment
+  labels:
+    app: miniproj
+spec:
+  replicas: 2 # deployment will create desired number of pods.
+  selector:
+    matchLabels:
+      app: miniproj
+  template:
+    metadata:
+      labels:
+        app: miniproj
+    spec:
+      containers:
+        - name: miniproject
+          image: gozreh33/miniproject:database # image pulled from docker hub.
+          ports:
+            - containerPort: 80 # expose pods on port 80.
+---
+# second section creates service through which we communicate with above deployement.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: miniproject-service
+spec:
+  selector:
+    app: miniproj
+  type: LoadBalancer # service to act as load balancer
+  ports:
+    - protocol: TCP
+      port: 80 # service exposed to node on port 80.
+      targetPort: 80 # service targets port 80 on deployment.
+      nodePort: 30000 # service reachable via port 30000 on node.
