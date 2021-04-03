@@ -22,7 +22,7 @@ spec:
           ports:
             - containerPort: 80 # expose pods on port 80.
 ---
-# second section creates service through which we communicate with above deployement.
+# second section creates service through which we communicate with above deployment.
 
 apiVersion: v1
 kind: Service
