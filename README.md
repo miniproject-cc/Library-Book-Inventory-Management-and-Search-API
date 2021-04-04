@@ -1,11 +1,10 @@
 # Cloud Computing Miniproject
 
-## Library Book Inventory Management And Search API
+## Library Book Inventory Management and Search API
 
-This project is intented to help librarians save their time as well as their resources by using this 
-Book Inventory Management App. The RESTful API that this app provides can be used to store a range a titles that are available in the library as well manage them on day to day basis. The API also provides features using external services including helping librarians to discover millions of new titles on Google Books and research new fields and their reviews on Twitter API.
+This project is designed to assist librarians and other book keepers by providing a method for storing and accessing information on books they already manage, and for discovering a range of new titles through external APIs. The RESTful API that this app provides can be used to store and retrieve information on books from a cloud hosted database, while the external APIs supported by the app allow for the easy research and discovery of new books in a given field using the Google Books API. Further research into these fields is supported by the Twitter API, which allows users to view discussions and reviews of new books on Twitter.
 
-A MySQL database that can be hosted using AWS dedicated Database servers and can include a range of book attributes including price and region details.
+The database used is a MySQL database hosted using AWS RDS and can be designed include a range of book attributes including price and region details. The app is then run in Kubernetes to provide effective resource management through load balancing should multiple users decide to use the app at once.
 
 ## Getting Started
 
@@ -55,18 +54,19 @@ For this project, we decided to use the lightweight, single node MicroK8s Kubern
 
 **Loadbalancing**
 
-By setting the number of pods we want in the deployment to 2+ (change replicas in YAML file), we can get our Kubernetes to load balance. This means the requests sent to the miniproject service will be distributed between the pods running the app, meaning resources are used more efficiently and requests can be completed faster. This is especially true when the system is under high demand. We set the service to be of type load balancer in the YAML file.
+By setting the number of pods we want in the Kubernetes deployment to 2+ (change replicas in YAML file), we can get our Kubernetes to load balance. This means the requests sent to the miniproject service will be distributed between the pods running the app, meaning resources are used more efficiently and requests can be completed faster. This is especially true when the system is under high demand. We set the service to be of type load balancer in the YAML file.
 
 
 ### Libraries and External Frameworks Used
 
+**Language used:**
+Python 3.7
 
-**Load Balancing:**<br/>
-Kubernetes<br/>
+**Kubernetes:**<br/>
+Docker<br/>
 Microk8s<br/>
-YAML<br/>
 
-**Other Libraries and their versions installed in the Python Virtual Environment**:<br/>
+**Other Libraries and their versions required (requirements.txt)**:<br/>
 aniso8601==9.0.1<br/>
 certifi==2020.12.5<br/>
 chardet==4.0.0<br/>
@@ -92,7 +92,7 @@ tweepy==3.10.0<br/>
 urllib3==1.26.4<br/>
 Werkzeug==1.0.1<br/>
 
-**Online resources used**:
+**Online resources used:**
 
 FLASK API TUTORIAL: https://www.youtube.com/watch?v=GMppyAPbLYk&t=3555s<br/>
 Hoffmann Sample Google Books API: https://github.com/hoffmann/googlebooks<br/>
