@@ -3,4 +3,4 @@ COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
 EXPOSE 80
-CMD [ "python" , "miniproject_docker.py" ]
+CMD [ "python" , "miniproject_v1.py" ]
