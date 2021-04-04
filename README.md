@@ -52,14 +52,14 @@ The Docker image was built using the Dockerfile, miniproject_v1.py, and requirem
 
 For this project, we decided to use the lightweight, single node MicroK8s Kubernetes. Once Kubernetes has been started, the YAML file (miniproject_v1.yml) can be applied to create both the service and deployment for the miniproject app. The deployment is created by pulling the relevant Docker image (as above).
 
-**Loadbalancing**
+**Load balancing**
 
 By setting the number of pods we want in the Kubernetes deployment to 2+ (change replicas in YAML file), we can get our Kubernetes to load balance. This means the requests sent to the miniproject service will be distributed between the pods running the app, meaning resources are used more efficiently and requests can be completed faster. This is especially true when the system is under high demand. We set the service to be of type load balancer in the YAML file.
 
 
 ### Libraries and External Frameworks Used
 
-**Language used:**
+**Language used:**<br/>
 Python 3.7
 
 **Kubernetes:**<br/>
