@@ -105,7 +105,7 @@ Twitter API with Tweepy: https://towardsdatascience.com/how-to-access-twitters-a
 
 **Alexander Herzog** - Implementation of Kubernetes and Docker, hosting the database in AWS RDS<br/>
 
-**Harry Agyemang** - Heroku testing (Idea dropped later on)<br/>
+**Harry Agyemang** - Heroku testing (Idea dropped later on), Participated in deployment of Database to AWS<br/>
 
 **Ifrah Lateef** - Involved in Kubernetes research and documentation of the API<br/>
 
