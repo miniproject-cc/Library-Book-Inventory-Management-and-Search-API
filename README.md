@@ -96,7 +96,9 @@ Werkzeug==1.0.1<br/>
 
 FLASK API TUTORIAL: https://www.youtube.com/watch?v=GMppyAPbLYk&t=3555s<br/>
 Hoffmann Sample Google Books API: https://github.com/hoffmann/googlebooks<br/>
-Kubernetes tutorial by TechWorld with Nana: https://www.youtube.com/watch?v=X48VuDVv0do
+Kubernetes tutorial by TechWorld with Nana: https://www.youtube.com/watch?v=X48VuDVv0do<br/>
+Twitter API with Tweepy: https://towardsdatascience.com/how-to-access-twitters-api-using-tweepy-5a13a206683b<br/>
+
 
 ### Contributors
 
